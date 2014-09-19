@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Seamless</string>
+    <integer name="max_row_size">3</integer>
+</resources>

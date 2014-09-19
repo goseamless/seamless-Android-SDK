@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="seamless_metric_micro">4dp</dimen>
+    <dimen name="seamless_metric_small">8dp</dimen>
+    <dimen name="seamless_metric_medium">12dp</dimen>
+    <dimen name="seamless_metric_large">16dp</dimen>
+    <dimen name="seamless_metric_xlarge">32dp</dimen>
+    <dimen name="seamless_metric_xxlarge">48dp</dimen>
+
+</resources>

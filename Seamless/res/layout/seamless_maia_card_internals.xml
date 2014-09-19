@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.mobilike.seamless.view.MaiaCardContainerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:padding="@dimen/seamless_metric_micro"
+    android:background="@drawable/feed_fragment_item_bg" >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent" >
+
+
+
+        <include
+            layout="@layout/seamless_maiacard_description_old"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8" />
+
+        <include
+            layout="@layout/seamless_maiacard_banner_old"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5" />
+
+    </LinearLayout>
+
+</com.mobilike.seamless.view.MaiaCardContainerView>

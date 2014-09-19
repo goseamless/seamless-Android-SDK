@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkGrey">#898C92</color>
+    <color name="ratingBarFilled">#F8A132</color>
+    <color name="ratingBarEmpty">#BDBDBD</color>
+    <color name="maiaCardFooterBackground">#ECEDF3</color>
+    <color name="grey">#818181</color>
+</resources>

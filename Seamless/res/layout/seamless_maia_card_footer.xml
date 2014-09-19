@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/seamless_maia_card_footer_container"
+    android:layout_width="match_parent"
+    android:background="@color/maiaCardFooterBackground"
+    android:layout_height="72dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_marginRight="144dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/seamless_metric_small">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/dummyView2"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center_vertical"
+            android:id="@+id/maia_card_bottom_title" />
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="-2dp"
+            android:numStars="5"
+            style="@style/ratingbarhav"
+            android:id="@+id/seamless_maia_card_footer_rating" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="2dp"
+            android:textColor="@color/grey"
+            android:maxLines="1"
+            android:id="@+id/seamless_maia_card_footer_quantity" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/dummyView"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/seamless_maia_card_footer_ctabutton"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:maxLines="1"
+        android:textSize="12sp"
+        android:textColor="#363636"
+        android:textStyle="bold"
+        android:background="@drawable/maia_button"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="@dimen/seamless_metric_small"/>
+
+</FrameLayout>
