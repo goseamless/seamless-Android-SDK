@@ -74,7 +74,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.seamless:seamless:0.0.1'
+        compile 'com.goseamless:seamless:1.0.0'
     }
     ```
 
