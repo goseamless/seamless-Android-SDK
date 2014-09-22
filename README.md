@@ -1,4 +1,4 @@
-Seamless-Android-SDK
+seamless-Android-SDK
 =========
 
 Requirements
