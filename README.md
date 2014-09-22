@@ -1,12 +1,5 @@
 Seamless-Android-SDK
 =========
-Download
------
-* [Seamless SDK]  
-
-    You can download Seamless SDK for Android OS platform via this link.  
-
-
 
 Requirements
 -----
