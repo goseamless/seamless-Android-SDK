@@ -248,7 +248,7 @@ InterstitialManagerListener intersititalManagerListener = new InterstitialManage
 ```
 InterstitialManager interstitialManager = new InterstitialManager.Builder(context)
     // Should specify your current content like "yourapp-yourcontent-adtype"
-    // i.e. : "yourapp-sports-interstitial" 
+    // i.e. : "yourapp-sports-fullpagelayer" 
     .entity("xxx-- Your Entity --xxx") 
     .listener(intersititalManagerListener)
     .category(AdCategories.Uncategorised) / Select proper category eg: News, Sports etc.
