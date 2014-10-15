@@ -57,6 +57,8 @@ Installation
               android:configChanges="keyboardHidden|orientation" />
     <activity android:name="com.mobilike.seamless.mopub.mobileads.MraidVideoPlayerActivity"
               android:configChanges="keyboardHidden|orientation" />
+    <activity android:name="com.facebook.ads.InterstitialAdActivity"
+            android:configChanges="keyboardHidden|orientation" />
     ```
 
 * For Android Studio  
