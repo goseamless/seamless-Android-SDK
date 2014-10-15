@@ -324,7 +324,7 @@ SeamlessPlayerManagerListener seamlessPlayerManagerListener = new SeamlessPlayer
 * Define the *SeamlessPlayerManager*  
 ```
 SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(context)
-    .token("xxx-- Your Token --xxx") // Should specify your current content like "yourapp-yourcontent-adtype"
+    .entity("xxx-- Your Token --xxx") // Should specify your current content like "yourapp-yourcontent-adtype"
     .listener(seamlessPlayerManager Listener)
     .build();
 ```  
