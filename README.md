@@ -1,12 +1,5 @@
-Seamless-Android-SDK
+seamless-Android-SDK
 =========
-Download
------
-* [Seamless SDK]  
-
-    You can download Seamless SDK for Android OS platform via this link.  
-
-
 
 Requirements
 -----
@@ -68,26 +61,25 @@ Installation
 
 * For Android Studio  
 
-  1. Open new module section and select xxx
+  In your build.gradle file,    
+    * Add following code to repositories --> maven
+    ```
+    repositories {
+        maven {
+            url "http://maven.seamlessapi.com:8081/nexus/content/repositories/releases/"
+        }
+    }
+    ```  
+    
+    * Add the following code to your dependencies
+    ```
+    dependencies {
+        compile 'com.goseamless:seamless:1.0.0'
+    }
+    ```
 
-  ![Alt Text](/ReadMeAssets/add_aar_step1.png)
 
-
-  2. Select seamles.aar file and click next
-
-  ![Alt Text](/ReadMeAssets/add_aar_step2.png)
-
-
-  3. Define external dependencies at build.gradle
-
-    compile 'com.android.support:support-v4:19.+'
-    compile 'com.squareup.picasso:picasso:+'
-    compile 'com.squareup.okhttp:okhttp:+'
-    compile 'com.squareup.okhttp:okhttp-urlconnection:+'
-    compile 'com.makeramen:roundedimageview:1.3.0'
-
-
-  4. Declare the following permissions to your *AndroidManifest.xml* file.
+  * Declare the following permissions to your *AndroidManifest.xml* file.
   ```
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -95,7 +87,7 @@ Installation
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   ```
 
-  5. Declare the following activities to your *AndroidManifest.xml* file.  
+  * Declare the following activities to your *AndroidManifest.xml* file.  
   ```
   <activity android:name="com.mobilike.seamless.mopub.mobileads.MoPubActivity"
             android:configChanges="keyboardHidden|orientation" />
@@ -256,7 +248,7 @@ InterstitialManagerListener intersititalManagerListener = new InterstitialManage
 ```
 InterstitialManager interstitialManager = new InterstitialManager.Builder(context)
     // Should specify your current content like "yourapp-yourcontent-adtype"
-    // i.e. : "yourapp-sports-interstitial" 
+    // i.e. : "yourapp-sports-fullpagelayer" 
     .entity("xxx-- Your Entity --xxx") 
     .listener(intersititalManagerListener)
     .category(AdCategories.Uncategorised) / Select proper category eg: News, Sports etc.
