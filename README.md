@@ -1,4 +1,4 @@
-seamless-Android-SDK
+seamless-Android-SDK(v1.1.0)
 =========
 
 Requirements
@@ -59,6 +59,8 @@ Installation
               android:configChanges="keyboardHidden|orientation" />
     <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
+    <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     ```
 
 * For Android Studio  
@@ -76,7 +78,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:1.0.0'
+        compile 'com.goseamless:seamless:1.1.0'
     }
     ```
 
@@ -101,6 +103,8 @@ Installation
             android:configChanges="keyboardHidden|orientation" />
   <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
+  <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
   ```
 
 
