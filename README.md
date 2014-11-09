@@ -1,4 +1,4 @@
-seamless-Android-SDK(v1.1.0)
+seamless-Android-SDK(v1.2.0)
 =========
 
 Requirements
@@ -78,7 +78,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:1.1.0'
+        compile 'com.goseamless:seamless:1.2.0'
     }
     ```
 
@@ -120,8 +120,8 @@ How to use
   {
       super.onCreate();
         
-      // In the onCreate method, set your app token
-      SeamlessConfig.setAppToken("*** Your AppToken ***");
+      // In the onCreate method, set your app token and application context
+      SeamlessConfig.setAppToken("*** Your AppToken ***", this);
   }
    ``` 
 
