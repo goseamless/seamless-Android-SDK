@@ -59,6 +59,8 @@ Installation
               android:configChanges="keyboardHidden|orientation" />
     <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
+    <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScre             enSize" />
     <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
     ```
@@ -103,6 +105,8 @@ Installation
             android:configChanges="keyboardHidden|orientation" />
   <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
+  <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScre             enSize" />
   <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
   ```
