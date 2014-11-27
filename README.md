@@ -1,4 +1,4 @@
-seamless-Android-SDK(v1.2.0)
+seamless-Android-SDK(v1.3.0)
 =========
 
 Requirements
@@ -226,6 +226,7 @@ BannerManagerListener bannerManagerListener = new BannerManagerListener() {
         // Should specify your current content like "yourapp-yourcontent-adtype"
         // i.e : "yourapp-sports-banner"
         .entity("xxx-- Your Entity --xxx") 
+        .adView("xxx-- YOUR AD SIZE --xxx") // This is OPTIONAL i.e. = "250x150"/ the size of your SeamlessMMAView
         .category(AdCategories.Uncategorised) / Select proper category eg: News, Sports etc.
         .listener(bannerManagerListener)
         .build();
