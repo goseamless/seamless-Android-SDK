@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Seamless</string>
+    <string name="sponsored">Sponsorlu</string>
+
+    <string name="skip_count_down">Reklamı Geç {COUNTDOWN}</string>
+    <string name="skip_message">Reklamı Geç</string>
+    <string name="layout_skin_message">Reklam {COUNTDOWN} sn. kaldı</string>
+    <string name="layout_click_message">Daha fazla bilgi için</string>
+
+    <integer name="max_row_size">3</integer>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Seamless</string>
+    <string name="sponsored">Σύνδεσμοι</string>
+
+    <string name="skip_count_down">Παράλειψη σε {COUNTDOWN}</string>
+    <string name="skip_message">Παράλειψη</string>
+    <string name="layout_skin_message">Παράλειψη σε {COUNTDOWN}</string>
+    <string name="layout_click_message">Περισσότερα</string>
+
+
+    <integer name="max_row_size">3</integer>
+</resources>

@@ -652,6 +652,11 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static int common_signin_button_text_long=0x7f05001e;
+        public static int layout_click_message=0x7f050025;
+        public static int layout_skin_message=0x7f050024;
+        public static int skip_count_down=0x7f050022;
+        public static int skip_message=0x7f050023;
+        public static int sponsored=0x7f050021;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

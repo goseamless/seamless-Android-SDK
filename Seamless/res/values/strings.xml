@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Seamless</string>
+    <string name="sponsored">Sponsored</string>
+
+    <string name="skip_count_down">Skip Ad {COUNTDOWN}</string>
+    <string name="skip_message">Skip Ad</string>
+    <string name="layout_skin_message">You can skip ad in {COUNTDOWN}s</string>
+    <string name="layout_click_message">For more information</string>
+
     <integer name="max_row_size">3</integer>
 </resources>

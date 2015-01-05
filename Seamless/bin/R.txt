@@ -232,6 +232,11 @@ int string common_google_play_services_update_text 0x7f050013
 int string common_google_play_services_update_title 0x7f050012
 int string common_signin_button_text 0x7f05001d
 int string common_signin_button_text_long 0x7f05001e
+int string layout_click_message 0x7f050025
+int string layout_skin_message 0x7f050024
+int string skip_count_down 0x7f050022
+int string skip_message 0x7f050023
+int string sponsored 0x7f050021
 int string wallet_buy_button_place_holder 0x7f05001f
 int style AppBaseTheme 0x7f040006
 int style Theme_IAPTheme 0x7f040000
