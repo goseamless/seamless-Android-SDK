@@ -166,6 +166,10 @@ FeedManager feedManager = new FeedManager.Builder(context)
         .build();
 ```  
 
+**NOTE:  What are entities and category? Are they important?**
+- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
+- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
+
 > Make sure that you re-create your convertView
 > in your ArrayAdapter, if it's tag not an instance of
 > your current ViewHolder
@@ -232,6 +236,10 @@ BannerManagerListener bannerManagerListener = new BannerManagerListener() {
         .build();
 ```  
 
+**NOTE:  What are entities and category? Are they important?**
+- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
+- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
+
 >Don't forget to destory your adView in *onDestroy()* callback
 ```
 @Override
@@ -267,6 +275,10 @@ InterstitialManager interstitialManager = new InterstitialManager.Builder(contex
     .category(AdCategories.Uncategorised) / Select proper category eg: News, Sports etc.
     .build();
 ```  
+
+**NOTE:  What are entities and category? Are they important?**
+- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
+- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
 
 >Don't forget to destroy your adView in *onDestroy()* callback
 ```
@@ -342,6 +354,9 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
     .build();
 ```  
 
+**NOTE:  What are entities and category? Are they important?**
+- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
+- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
 
 ### Feed Ad Customization (Recommended)
 * You can set properties to your *FeedManager* object  
