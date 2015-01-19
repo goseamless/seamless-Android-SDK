@@ -80,7 +80,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:1.4.0'
+        compile 'com.goseamless:seamless:1.5.0'
     }
     ```
 
