@@ -1,4 +1,4 @@
-seamless-Android-SDK(v1.4.0)
+seamless-Android-SDK(v1.5.0)
 =========
 
 Requirements
@@ -80,7 +80,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:1.4.0'
+        compile 'com.goseamless:seamless:1.5.0'
     }
     ```
 
@@ -161,6 +161,7 @@ FeedManager feedManager = new FeedManager.Builder(context)
         .entity("xxx-- Your Entity --xxx") 
         .adapter(adapter)
         .listener(feedListener)
+        .parentView(mListview) // or gridview  
         .onItemClickListener(onItemClickListener) // Optional - if you have an onItemClickListener, pass it here
         .category(AdCategories.Uncategorised) // Select proper category eg: News, Sports etc.
         .build();
