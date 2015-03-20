@@ -1,4 +1,4 @@
-seamless-Android-SDK(v1.5.3)
+seamless-Android-SDK(v2.0.0)
 =========
 
 Requirements
@@ -50,13 +50,13 @@ Installation
     4. Declare the following activities to your *AndroidManifest.xml* file.  
     ```
     <activity android:name="com.mobilike.seamless.mopub.mobileads.MoPubActivity"
-              android:configChanges="keyboardHidden|orientation" />
+              android:configChanges="keyboardHidden|orientation|screenSize" />
     <activity android:name="com.mobilike.seamless.mopub.mobileads.MraidActivity"
-              android:configChanges="keyboardHidden|orientation" />
+              android:configChanges="keyboardHidden|orientation|screenSize" />
     <activity android:name="com.mobilike.seamless.mopub.common.MoPubBrowser"
-              android:configChanges="keyboardHidden|orientation" />
+              android:configChanges="keyboardHidden|orientation|screenSize" />
     <activity android:name="com.mobilike.seamless.mopub.mobileads.MraidVideoPlayerActivity"
-              android:configChanges="keyboardHidden|orientation" />
+              android:configChanges="keyboardHidden|orientation|screenSize" />
     <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
     <activity android:name="com.google.android.gms.ads.AdActivity"
@@ -99,13 +99,13 @@ Installation
   * Declare the following activities to your *AndroidManifest.xml* file.  
   ```
   <activity android:name="com.mobilike.seamless.mopub.mobileads.MoPubActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
   <activity android:name="com.mobilike.seamless.mopub.mobileads.MraidActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
   <activity android:name="com.mobilike.seamless.mopub.common.MoPubBrowser"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
   <activity android:name="com.mobilike.seamless.mopub.mobileads.MraidVideoPlayerActivity"
-            android:configChanges="keyboardHidden|orientation" />
+            android:configChanges="keyboardHidden|orientation|screenSize" />
   <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
   <activity android:name="com.google.android.gms.ads.AdActivity"
