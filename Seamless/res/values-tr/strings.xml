@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_nameSeamless">Seamless</string>
+    <string name="app_name">Seamless</string>
     <string name="sponsored">Sponsorlu</string>
 
     <string name="skip_count_down">Reklamı Geç {COUNTDOWN}</string>
