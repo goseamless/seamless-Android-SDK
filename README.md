@@ -1,4 +1,4 @@
-seamless-Android-SDK(v1.5.2)
+seamless-Android-SDK(v1.5.3)
 =========
 
 Requirements
@@ -60,7 +60,10 @@ Installation
     <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
     <activity android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScre             enSize" />
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+    <activity
+            android:name="com.mobilike.seamless.player.org.nexage.sourcekit.vast.activity.VASTActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
     <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
     ```
@@ -80,7 +83,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:1.5.2'
+        compile 'com.goseamless:seamless:1.5.3'
     }
     ```
 
@@ -106,7 +109,10 @@ Installation
   <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
   <activity android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScre             enSize" />
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+  <activity
+            android:name="com.mobilike.seamless.player.org.nexage.sourcekit.vast.activity.VASTActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
   <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
   ```
@@ -298,51 +304,30 @@ Currently, Seamless Android SDK only supports preroll ads.
 SeamlessPlayerManagerListener seamlessPlayerManagerListener = new SeamlessPlayerManagerListener() {
 
     @Override
-    public void onAdPrepared(final AdView adView,final  Map<String, Object> params) {
-
-        VPAIDEventListener onAdLoaded = new VPAIDEventListener() {
-
-            @Override
-            public void onEvent(VPAIDEvent event) {
-
-                // Create container View to hold the AdView
-                // Remove all views from the container and add the AdView
-                adViewLayout.removeAllViews();
-                adViewLayout.addView(adView);
-
-                // Then start the video ad
-                adView.startAd();
-            }
-        };
-
-        VPAIDEventListener onAdStopped = new VPAIDEventListener() {
-             
-            @Override
-            public void onEvent(VPAIDEvent event) {
-                 // Ad Stopped
-            } 
-        };
-
-        VPAIDEventListener onAdError = new VPAIDEventListener() {
-             
-            @Override
-            public void onEvent(VPAIDEvent event) {
-                 // Error
-            } 
-        };
-
-        // Add the listeners that you defined above
-        adView.addEventListener(VPAIDEvent.AdLoaded, onAdLoaded);
-        adView.addEventListener(VPAIDEvent.AdStopped, onAdStopped);
-        adView.addEventListener(VPAIDAdErrorEvent.AdError, onAdError);
-
-        // Initialize the ad
-        adView.initAd(params);
+    public void onAdReady(VASTPlayer vastPlayer) {
+        if (vastPlayer != null) {
+            vastPlayer.play();
+        }
     }
 
     @Override
     public void onAdFailed(String error) {
-                
+        // Ad Failed
+    }
+
+    @Override
+    public void onAdClicked() {
+        // Ad Clicked
+    }
+
+    @Override
+    public void onAdCompleted() {
+        // Ad Completed
+    }
+
+    @Override
+    public void onAdDismissed() {
+        // Ad Dismissed
     }
     
 };
