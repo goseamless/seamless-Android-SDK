@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.0.1)
+seamless-Android-SDK(v2.1.0)
 =========
 
 Requirements
@@ -83,7 +83,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.0.1'
+        compile 'com.goseamless:seamless:2.1.0'
     }
     ```
 
@@ -199,6 +199,48 @@ protected void onDestory() {
 > Also note that, Seamless SDK currently does not support landscape orientation.
 > So aviod to inject ads when the device is in landscape mode.
 
+
+* For RecyclerView define the *RecyclerFeedListener*
+```
+RecyclerFeedListener feedListener = new RecyclerFeedListener() {
+    @Override
+    public void onAdLoad(RecyclerView.Adapter adapter) {
+        // If ads loaded succesfully,
+        // returns an adapter that contains feed ads
+        mRecyclerView.setAdapter(adapter);
+
+    }
+
+    @Override
+    public void onAdFailed(RecyclerView.Adapter adapter){
+        // If ads fail to load, returns your own adapter
+        mRecyclerView.setAdapter(adapter);
+    }
+};
+```
+
+* Define the *RecyclerFeedManager*
+```
+RecyclerFeedManager feedManager = new RecyclerFeedManager.Builder(context)
+        // Should specify your current content like "yourapp-yourcontent-adtype"
+        // i.e.: "myapp-sports-feed"
+        .entity("xxx-- Your Entity --xxx") 
+        .adapter(adapter)
+        .listener(feedListener)
+        .recyclerView(mRecyclerView)
+        .category(AdCategories.Uncategorised) // Select proper category eg: News, Sports etc.
+        .build();
+```  
+> And don't forget to destroy it!
+```
+@Override
+protected void onDestory() {
+    if(feedManager != null) {
+        feedManager.destroy();
+    }
+    super.onDestroy();
+}
+```  
 
 
 ### Banner Integration
