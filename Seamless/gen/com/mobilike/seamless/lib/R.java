@@ -447,88 +447,75 @@ containing a value of this type.
         public static int common_signin_btn_text_pressed_light=0x7f020017;
         public static int feed_fragment_item_bg=0x7f020018;
         public static int feed_item_bg=0x7f020019;
-        public static int frame=0x7f02001a;
-        public static int ic_launcher=0x7f02001b;
-        public static int ic_plusone_medium_off_client=0x7f02001c;
-        public static int ic_plusone_small_off_client=0x7f02001d;
-        public static int ic_plusone_standard_off_client=0x7f02001e;
-        public static int ic_plusone_tall_off_client=0x7f02001f;
-        public static int imageframe=0x7f020020;
-        public static int maia_button=0x7f020021;
-        public static int maia_button_dropdown=0x7f020022;
-        public static int maia_logo=0x7f020023;
-        public static int powered_by_google_dark=0x7f020024;
-        public static int powered_by_google_light=0x7f020025;
-        public static int ratingbar_style=0x7f020026;
-        public static int star_empty=0x7f020027;
-        public static int star_filled=0x7f020028;
-        public static int star_full=0x7f020029;
-        public static int star_half=0x7f02002a;
-        public static int star_unfilled=0x7f02002b;
+        public static int ic_plusone_medium_off_client=0x7f02001a;
+        public static int ic_plusone_small_off_client=0x7f02001b;
+        public static int ic_plusone_standard_off_client=0x7f02001c;
+        public static int ic_plusone_tall_off_client=0x7f02001d;
+        public static int imageframe=0x7f02001e;
+        public static int maia_button=0x7f02001f;
+        public static int maia_button_dropdown=0x7f020020;
+        public static int maia_logo=0x7f020021;
+        public static int powered_by_google_dark=0x7f020022;
+        public static int powered_by_google_light=0x7f020023;
+        public static int ratingbar_style=0x7f020024;
+        public static int star_empty=0x7f020025;
+        public static int star_filled=0x7f020026;
+        public static int star_full=0x7f020027;
+        public static int star_half=0x7f020028;
+        public static int star_unfilled=0x7f020029;
     }
     public static final class id {
-        public static int ad_view_banner_imageView=0x7f070019;
-        public static int ad_view_description_textView=0x7f070017;
-        public static int ad_view_header_linearLayout=0x7f070014;
-        public static int ad_view_mainText_textView=0x7f070018;
-        public static int ad_view_thumb_imageView=0x7f070015;
-        public static int ad_view_title_textView=0x7f070016;
-        public static int banner=0x7f070025;
+        public static int banner=0x7f07001b;
         public static int book_now=0x7f070010;
         public static int buyButton=0x7f07000a;
         public static int buy_now=0x7f07000f;
         public static int buy_with_google=0x7f07000e;
         public static int classic=0x7f070011;
-        public static int dummyView=0x7f07002d;
-        public static int dummyView2=0x7f070029;
+        public static int dummyView=0x7f070023;
+        public static int dummyView2=0x7f07001f;
         public static int grayscale=0x7f070012;
         public static int holo_dark=0x7f070005;
         public static int holo_light=0x7f070006;
         public static int hybrid=0x7f070004;
-        public static int imageView1=0x7f070021;
-        public static int liverail_fragment_layout=0x7f07001e;
-        public static int maiaButton=0x7f070023;
-        public static int maia_card_banner_image=0x7f070032;
-        public static int maia_card_bottom_button=0x7f070039;
-        public static int maia_card_bottom_download=0x7f070038;
-        public static int maia_card_bottom_ratingBar=0x7f070037;
-        public static int maia_card_bottom_title=0x7f07002a;
-        public static int maia_card_description_main_text=0x7f070034;
-        public static int maia_card_footer_layout=0x7f070035;
-        public static int maia_card_header_main_title=0x7f07003b;
-        public static int maia_card_header_small_icon=0x7f07003a;
-        public static int maia_card_header_small_icon_container=0x7f07003d;
-        public static int maia_card_header_sponsor=0x7f07003c;
-        public static int maia_title=0x7f070022;
+        public static int imageView1=0x7f070017;
+        public static int maiaButton=0x7f070019;
+        public static int maia_card_banner_image=0x7f070028;
+        public static int maia_card_bottom_button=0x7f07002f;
+        public static int maia_card_bottom_download=0x7f07002e;
+        public static int maia_card_bottom_ratingBar=0x7f07002d;
+        public static int maia_card_bottom_title=0x7f070020;
+        public static int maia_card_description_main_text=0x7f07002a;
+        public static int maia_card_footer_layout=0x7f07002b;
+        public static int maia_card_header_main_title=0x7f070033;
+        public static int maia_card_header_small_icon=0x7f070031;
+        public static int maia_card_header_small_icon_container=0x7f070030;
+        public static int maia_title=0x7f070018;
         public static int match_parent=0x7f07000c;
         public static int monochrome=0x7f070013;
         public static int none=0x7f070000;
         public static int normal=0x7f070001;
-        public static int pager=0x7f070024;
+        public static int pager=0x7f07001a;
         public static int production=0x7f070007;
-        public static int progressLayoutBanner=0x7f070033;
-        public static int progressLayoutSmallIcon=0x7f07003e;
-        public static int ratingBar1=0x7f07001b;
+        public static int progressLayoutBanner=0x7f070029;
+        public static int progressLayoutSmallIcon=0x7f070032;
         public static int sandbox=0x7f070008;
         public static int satellite=0x7f070002;
-        public static int seamless_maia_card_description=0x7f070026;
-        public static int seamless_maia_card_footer_container=0x7f070028;
-        public static int seamless_maia_card_footer_ctabutton=0x7f07002e;
-        public static int seamless_maia_card_footer_quantity=0x7f07002c;
-        public static int seamless_maia_card_footer_rating=0x7f07002b;
-        public static int seamless_maia_card_header_icon=0x7f07002f;
-        public static int seamless_maia_card_header_sponsor=0x7f070031;
-        public static int seamless_maia_card_header_title=0x7f070030;
-        public static int seamless_maia_card_mainimage=0x7f070027;
-        public static int seamless_maia_container=0x7f070020;
-        public static int seamless_maia_main_container=0x7f07001f;
+        public static int seamless_maia_card_description=0x7f07001c;
+        public static int seamless_maia_card_footer_container=0x7f07001e;
+        public static int seamless_maia_card_footer_ctabutton=0x7f070024;
+        public static int seamless_maia_card_footer_quantity=0x7f070022;
+        public static int seamless_maia_card_footer_rating=0x7f070021;
+        public static int seamless_maia_card_header_icon=0x7f070025;
+        public static int seamless_maia_card_header_sponsor=0x7f070027;
+        public static int seamless_maia_card_header_title=0x7f070026;
+        public static int seamless_maia_card_mainimage=0x7f07001d;
+        public static int seamless_maia_container=0x7f070016;
+        public static int seamless_maia_main_container=0x7f070015;
         public static int selectionDetails=0x7f07000b;
         public static int strict_sandbox=0x7f070009;
         public static int terrain=0x7f070003;
-        public static int textLayout=0x7f070036;
-        public static int textView1=0x7f07001a;
-        public static int textView2=0x7f07001c;
-        public static int textView3=0x7f07001d;
+        public static int test=0x7f070014;
+        public static int textLayout=0x7f07002c;
         public static int wrap_content=0x7f07000d;
     }
     public static final class integer {
@@ -536,27 +523,20 @@ containing a value of this type.
         public static int max_row_size=0x7f080001;
     }
     public static final class layout {
-        public static int fragment_ad_item=0x7f030000;
-        public static int fragment_liverail=0x7f030001;
-        public static int new_list_item=0x7f030002;
-        public static int null_item=0x7f030003;
-        public static int seamless_custom_banner=0x7f030004;
-        public static int seamless_maia_card=0x7f030005;
-        public static int seamless_maia_card_footer=0x7f030006;
-        public static int seamless_maia_card_header=0x7f030007;
-        public static int seamless_maia_card_internals=0x7f030008;
-        public static int seamless_maiacard=0x7f030009;
-        public static int seamless_maiacard_banner=0x7f03000a;
-        public static int seamless_maiacard_banner_old=0x7f03000b;
-        public static int seamless_maiacard_description=0x7f03000c;
-        public static int seamless_maiacard_description_old=0x7f03000d;
-        public static int seamless_maiacard_footer=0x7f03000e;
-        public static int seamless_maiacard_footer_old=0x7f03000f;
-        public static int seamless_maiacard_header=0x7f030010;
-        public static int seamless_maiacard_header_old=0x7f030011;
+        public static int custom_test=0x7f030000;
+        public static int new_list_item=0x7f030001;
+        public static int null_item=0x7f030002;
+        public static int seamless_custom_banner=0x7f030003;
+        public static int seamless_maia_card=0x7f030004;
+        public static int seamless_maia_card_footer=0x7f030005;
+        public static int seamless_maia_card_header=0x7f030006;
+        public static int seamless_maia_card_internals=0x7f030007;
+        public static int seamless_maiacard_banner_old=0x7f030008;
+        public static int seamless_maiacard_description_old=0x7f030009;
+        public static int seamless_maiacard_footer_old=0x7f03000a;
+        public static int seamless_maiacard_header_old=0x7f03000b;
     }
     public static final class string {
-        public static int app_name=0x7f050020;
         public static int auth_client_needs_enabling_title=0x7f050001;
         public static int auth_client_needs_installation_title=0x7f050002;
         public static int auth_client_needs_update_title=0x7f050003;
@@ -652,30 +632,17 @@ containing a value of this type.
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static int common_signin_button_text_long=0x7f05001e;
-        public static int layout_click_message=0x7f050025;
-        public static int layout_skin_message=0x7f050024;
-        public static int skip_count_down=0x7f050022;
-        public static int skip_message=0x7f050023;
-        public static int sponsored=0x7f050021;
+        public static int layout_click_message=0x7f050024;
+        public static int layout_skin_message=0x7f050023;
+        public static int skip_count_down=0x7f050021;
+        public static int skip_message=0x7f050022;
+        public static int sponsored=0x7f050020;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
         public static int wallet_buy_button_place_holder=0x7f05001f;
     }
     public static final class style {
-        /** 
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
-         */
-        public static int AppBaseTheme=0x7f040006;
         public static int Theme_IAPTheme=0x7f040000;
         public static int WalletFragmentDefaultButtonTextAppearance=0x7f040003;
         public static int WalletFragmentDefaultDetailsHeaderTextAppearance=0x7f040002;

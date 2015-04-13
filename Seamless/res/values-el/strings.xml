@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Seamless</string>
     <string name="sponsored">Σύνδεσμοι</string>
 
     <string name="skip_count_down">Παράλειψη σε {COUNTDOWN}</string>

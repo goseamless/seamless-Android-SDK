@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Seamless</string>
     <string name="sponsored">Sponsored</string>
 
     <string name="skip_count_down">Skip Ad {COUNTDOWN}</string>
