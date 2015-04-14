@@ -14,14 +14,15 @@ Requirements
 
 * Integrating Ads  
   * [Setup](#setup)
-  * [Integrating Feed Ads](#feed-ad-integration)
-  * [Integrating Banner Ads](#banner-integration)
-  * [Integrating Full-Page-Layer Ads](#full-page-layer-ad-integration)
-  * [Integrating Video Ads](#video-ad-integration)  
+  * [Feed Ad Integration](#feed-ad-integration)
+  * [Banner Integration](#banner-integration)
+  * [Full-Page-Layer Ad Integration](#full-page-layer-ad-integration)
+  * [Video Ad Integration](#video-ad-integration)  
 
 * Customizing Ads  
   * [Feed Ad Customization](#feed-ad-customization-recommended)
 
+* [FAQ](#faq)
 
 Installation
 -----
@@ -173,10 +174,6 @@ FeedManager feedManager = new FeedManager.Builder(context)
         .build();
 ```  
 
-**NOTE:  What are entities and category? Are they important?**
-- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
-- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
-
 > Make sure that you re-create your convertView
 > in your ArrayAdapter, if it's tag not an instance of
 > your current ViewHolder
@@ -231,16 +228,6 @@ RecyclerFeedManager feedManager = new RecyclerFeedManager.Builder(context)
         .category(AdCategories.Uncategorised) // Select proper category eg: News, Sports etc.
         .build();
 ```  
-> And don't forget to destroy it!
-```
-@Override
-protected void onDestory() {
-    if(feedManager != null) {
-        feedManager.destroy();
-    }
-    super.onDestroy();
-}
-```  
 
 
 ### Banner Integration
@@ -285,10 +272,6 @@ BannerManagerListener bannerManagerListener = new BannerManagerListener() {
         .build();
 ```  
 
-**NOTE:  What are entities and category? Are they important?**
-- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
-- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
-
 >Don't forget to destory your adView in *onDestroy()* callback
 ```
 @Override
@@ -324,10 +307,6 @@ InterstitialManager interstitialManager = new InterstitialManager.Builder(contex
     .category(AdCategories.Uncategorised) / Select proper category eg: News, Sports etc.
     .build();
 ```  
-
-**NOTE:  What are entities and category? Are they important?**
-- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
-- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
 
 >Don't forget to destroy your adView in *onDestroy()* callback
 ```
@@ -381,10 +360,6 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
     .listener(seamlessPlayerManager Listener)
     .build();
 ```  
-
-**NOTE:  What are entities and category? Are they important?**
-- Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
-- Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
 
 ### Feed Ad Customization (Recommended)
 * You can set properties to your *FeedManager* object  
@@ -449,7 +424,7 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
     // You can define multiple typefaces
     Typeface typeFace = Typeface.createFromAsset(getAssets(), "** Your Font **");
     Typeface typeFace2 = Typeface.createFromAsset(getAssets(), "** Your Font 2 **");
-
+    >
     feedManager.setMaiaContainerTitleTypeFace(typeFace);
     feedManager.setMaiaAppNameTypeFace(typeFace);
     feedManager.setSponsorTypeFace(typeFace);
@@ -459,5 +434,53 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
     feedManager.setMaiaCTATypeFace(typeFace2);
     ```  
 
+### FAQ
+* **What are entities and categories? Are they important?**
+
+  Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
+  
+  Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
+  
+* **An entity name can contain maximum 50 characters.**
+ 
+* **Acceptable characters in entity names are _, +, %, ^, -, /.**
+
+* **I can’t build my app after integrating Seamless!**
+
+  If the build errors say that something is missing or disabled, then you might have forgotten to include permissions. Please check the setup part of the documentation.
+  
+  If you’re getting NoClassDefFoundError, then please check if you have included Seamless as a library.
+
+* **My list view is not being updated even though feed ad was successful.**
+
+  Are you using the adapter from the success callback? This adapter is the ultimate adapter that combines both your adapter and advertisements. Please check out our demo app for a reference.
+
+* **I see duplicate advertisements upon paging.**
+
+  Are you passing adManager to the adapter that already contains advertisements? You don’t need to build adManager again upon paging. Please check out our demo app for a reference.
+
+* **I don’t see any video advertisements!**
+
+  If you triggered ad requests by playing the video, we can define ads for those entities. Please contact our operation team.
+
+* **App fails to build with this message: Manifest merger failed: Attribute application@icon value=(@drawable/app_icon)**
+
+  Please remove any cached seamless data in Home(cmd+sft+’H’) - .gradle(hidden folder) - caches folder.
+
+* **App fails to build with this message: Attribute ‘theme’ has already defined.**
+
+  This is a known google bug. You can fix this by adding latest version of google play service dependency.
+
+* **I’m getting runtime error: java.lang.NoClassDefFoundError.**
+
+  Consider enabling multidex. See note below.
+
+* **After feed ad integration, my feed view flickers or gets very slow.**
+
+  On ad load callback, please make sure to set the adapter once. The adapter returned from the callback method includes the original adapter and advertisements, so you only need to set this adapter to your feed view.
+
+* **NOTE: Android limits the size of apps to be below 65k methods. You can overcome this limitation by enabling multi-dex.**
+
+  One of the most common errors caused by this limitation is NoClassFoundException. If you are getting this exception even though the class does exist, then consider enabling multidex. See more details here: [https://developer.android.com/tools/building/multidex.html](https://developer.android.com/tools/building/multidex.html)
 
 [Seamless SDK]:http://www.mobilike.com
