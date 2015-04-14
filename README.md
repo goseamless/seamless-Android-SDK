@@ -437,9 +437,9 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
 ### FAQ
 * **What are entities and categories? Are they important?**
 
-  Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
+  - Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
   
-  Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
+  - Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
   
 * **An entity name can contain maximum 50 characters.**
  
@@ -447,9 +447,9 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
 
 * **I can’t build my app after integrating Seamless!**
 
-  If the build errors say that something is missing or disabled, then you might have forgotten to include permissions. Please check the setup part of the documentation.
+  - If the build errors say that something is missing or disabled, then you might have forgotten to include permissions. Please check the setup part of the documentation.
   
-  If you’re getting NoClassDefFoundError, then please check if you have included Seamless as a library.
+  - If you’re getting NoClassDefFoundError, then please check if you have included Seamless as a library.
 
 * **My list view is not being updated even though feed ad was successful.**
 
