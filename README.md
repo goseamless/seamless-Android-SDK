@@ -22,7 +22,11 @@ Requirements
 * Customizing Ads  
   * [Feed Ad Customization](#feed-ad-customization-recommended)
 
+
+## Frequently Asked Questions
+
 * [FAQ](#faq)
+
 
 Installation
 -----
@@ -435,6 +439,7 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
     ```  
 
 ### FAQ
+
 * **What are entities and categories? Are they important?**
 
   - Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
