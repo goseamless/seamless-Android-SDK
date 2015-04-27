@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.1.0)
+seamless-Android-SDK(v2.2.0)
 =========
 
 Requirements
@@ -88,7 +88,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.1.0'
+        compile 'com.goseamless:seamless:2.2.0'
     }
     ```
 
