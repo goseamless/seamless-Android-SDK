@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.2.0)
+seamless-Android-SDK(v2.2.1)
 =========
 
 Requirements
@@ -88,7 +88,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.2.0'
+        compile 'com.goseamless:seamless:2.2.1'
     }
     ```
 
@@ -161,6 +161,12 @@ FeedListener feedListener = new FeedListener() {
         // If ads fail to load, returns your own adapter
         mListView.setAdapter(adapter);
     }
+    
+    @Override
+    public void onAdClicked(MoPubView view, String clickInfo) {
+        // Informs you that ad is clicked
+        // clickInfo returns ad's click URL. Do not use without a null check.
+    }
 };
 ```
 
@@ -217,6 +223,12 @@ RecyclerFeedListener feedListener = new RecyclerFeedListener() {
         // If ads fail to load, returns your own adapter
         mRecyclerView.setAdapter(adapter);
     }
+    
+    @Override
+    public void onAdClicked(MoPubView view, String clickInfo) {
+        // Informs you that ad is clicked
+        // clickInfo returns ad's click URL. Do not use without a null check.
+    }
 };
 ```
 
@@ -262,6 +274,12 @@ BannerManagerListener bannerManagerListener = new BannerManagerListener() {
     public void onBannerFailed(FrameLayout bannerView, String error) {
         mAdView.setVisibility(View.GONE);
     }
+    
+    @Override
+    public void onBannerClicked(MoPubView view, String clickInfo) {
+        // Informs you that ad is clicked
+        // clickInfo returns ad's click URL. Do not use without a null check.
+    }
 };
 ```
 * Define the BannerManager  
@@ -299,6 +317,17 @@ InterstitialManagerListener intersititalManagerListener = new InterstitialManage
     public void onInterstitialFailed(String error) {
 
     }
+    
+    @Override
+    public void onInterstitialClicked(MoPubInterstitial moPubInterstitial, String clickInfo) {
+        // Informs you that ad is clicked
+        // clickInfo returns ad's click URL. Do not use without a null check.
+    }
+
+    @Override
+    public void onInterstitialDismissed(MoPubInterstitial moPubInterstitial) {
+
+    }
 };
 ```
 * Define the *InterstitialManager*  
@@ -320,6 +349,7 @@ protected void onDestory() {
     super.onDestroy();
 }
 ```  
+>For enabling in-app-redirecting to a fragment in your app, append "fragment://" pattern as a prefix for your URL.
 
 ### Video Ad Integration
 Currently, Seamless Android SDK only supports preroll ads.  
