@@ -26,7 +26,16 @@ Requirements
 ## Frequently Asked Questions
 
 * [FAQ](#faq)
-
+* Q1. [What are entities and categories? Are they important?] (#q1)
+* Q2. [I can’t build my app after integrating Seamless!] (#q2)
+* Q3. [My list view is not being updated even though feed ad was successful.] (#q3)
+* Q4. [I see duplicate advertisements upon paging.] (#q4)
+* Q5. [I don’t see any video advertisements!] (#q5)
+* Q6. [App fails to build with this message: Manifest merger failed: Attribute application@icon value=(@drawable/app_icon)] (#q6)
+* Q7. [App fails to build with this message: Attribute ‘theme’ has already defined.] (#q7)
+* Q8. [I’m getting runtime error: java.lang.NoClassDefFoundError.] (#q8)
+* Q9. [After feed ad integration, my feed view flickers or gets very slow.] (#q9)
+* Q10. [NOTE: Android limits the size of apps to be below 65k methods. You can overcome this limitation by enabling multi-dex.] (#q10)
 
 Installation
 -----
@@ -468,52 +477,59 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
     feedManager.setMaiaCTATypeFace(typeFace2);
     ```  
 
-### FAQ
+## FAQ
 
+##### Q1
 * **What are entities and categories? Are they important?**
 
   - Entity names are used by Seamless to distinguish different views and determine whether it should provide ad or not. For example, you could use different entity names for main view and detail view or include menu names in the entity names.
-  
   - Category is used by Mopub to provide more relevant advertisement. Accurate category names will return better ads.
-  
-* **An entity name can contain maximum 50 characters.**
- 
-* **Acceptable characters in entity names are _, +, %, ^, -, /.**
+  - An entity name can contain maximum 50 characters.**
+  - Acceptable characters in entity names are _, +, %, ^, -, /.**
 
+##### Q2
 * **I can’t build my app after integrating Seamless!**
 
   - If the build errors say that something is missing or disabled, then you might have forgotten to include permissions. Please check the setup part of the documentation.
   
   - If you’re getting NoClassDefFoundError, then please check if you have included Seamless as a library.
 
+##### Q3
 * **My list view is not being updated even though feed ad was successful.**
 
   Are you using the adapter from the success callback? This adapter is the ultimate adapter that combines both your adapter and advertisements. Please check out our demo app for a reference.
 
+##### Q4
 * **I see duplicate advertisements upon paging.**
 
   Are you passing adManager to the adapter that already contains advertisements? You don’t need to build adManager again upon paging. Please check out our demo app for a reference.
 
+##### Q5
 * **I don’t see any video advertisements!**
 
   If you triggered ad requests by playing the video, we can define ads for those entities. Please contact our operation team.
 
+##### Q6
 * **App fails to build with this message: Manifest merger failed: Attribute application@icon value=(@drawable/app_icon)**
 
   Please remove any cached seamless data in Home(cmd+sft+’H’) - .gradle(hidden folder) - caches folder.
 
+##### Q7
 * **App fails to build with this message: Attribute ‘theme’ has already defined.**
 
   This is a known google bug. You can fix this by adding latest version of google play service dependency.
 
+##### Q8
 * **I’m getting runtime error: java.lang.NoClassDefFoundError.**
 
   Consider enabling multidex. See note below.
 
+##### Q9
 * **After feed ad integration, my feed view flickers or gets very slow.**
 
   On ad load callback, please make sure to set the adapter once. The adapter returned from the callback method includes the original adapter and advertisements, so you only need to set this adapter to your feed view.
 
+##### Q10
 * **NOTE: Android limits the size of apps to be below 65k methods. You can overcome this limitation by enabling multi-dex.**
 
   One of the most common errors caused by this limitation is NoClassFoundException. If you are getting this exception even though the class does exist, then consider enabling multidex. See more details here: [https://developer.android.com/tools/building/multidex.html](https://developer.android.com/tools/building/multidex.html)
