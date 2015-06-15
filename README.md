@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.2.1)
+seamless-Android-SDK(v2.3.0)
 =========
 
 Requirements
@@ -97,7 +97,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.2.1'
+        compile 'com.goseamless:seamless:2.3.0'
     }
     ```
 
@@ -358,7 +358,19 @@ protected void onDestory() {
     super.onDestroy();
 }
 ```  
->For enabling in-app-redirecting to a fragment in your app, append "fragment://" pattern as a prefix for your URL.
+
+
+>For enabling in-app-redirecting to a fragment in your app, append "fragment://" pattern as a prefix for your URL.  
+### Extra Google Parameters
+* In order to send extra google parameters, set the optional properties per each ad request. (available for all ad types)  
+```
+...
+.setBirthday() // Date 
+.setContentURL() // String 
+.setLocation() // Location
+.setGender() // int (available static values for each manager)
+.setChildTreatmentEnabled() // boolean
+```  
 
 ### Video Ad Integration
 Currently, Seamless Android SDK only supports preroll ads.  
