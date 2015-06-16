@@ -292,12 +292,13 @@ BannerManagerListener bannerManagerListener = new BannerManagerListener() {
 };
 ```
 * Define the BannerManager  
-```
- BannerManager bannerManager = new BannerManager.Builder(context)
+```  
+ // You can set the banners type on constructor. i.e. : BannerManager.BANNER / BannerManager.MRE
+ // For custom sized ads you can set the size : "310x95" etc.
+ BannerManager bannerManager = new BannerManager.Builder(context, BannerManager.BANNER)
         // Should specify your current content like "yourapp-yourcontent-adtype"
         // i.e : "yourapp-sports-banner"
         .entity("xxx-- Your Entity --xxx") 
-        .adView("xxx-- YOUR AD SIZE --xxx") // This is OPTIONAL i.e. = "250x150"/ the size of your SeamlessMMAView
         .category(AdCategories.Uncategorised) / Select proper category eg: News, Sports etc.
         .listener(bannerManagerListener)
         .build();
