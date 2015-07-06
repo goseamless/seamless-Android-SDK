@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="405dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/feed_item_bg"
+        android:gravity="center|bottom"
+        android:orientation="vertical"
+        android:paddingBottom="12dp">
+
+
+        <com.mobilike.seamless.view.MaiaCardContainerView
+            android:layout_width="310dp"
+            android:layout_height="350dp"
+            android:background="@drawable/feed_fragment_item_bg"
+            android:padding="3px">
+
+            <include layout="@layout/seamless_maia_card_header" />
+
+            <TextView
+                android:id="@+id/seamless_maia_card_description"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginTop="48dp"
+                android:ellipsize="end"
+                android:gravity="top|left"
+                android:maxLines="@integer/max_row_size"
+                android:paddingBottom="@dimen/seamless_metric_micro"
+                android:paddingLeft="@dimen/seamless_metric_small"
+                android:paddingRight="@dimen/seamless_metric_small"
+                android:paddingTop="@dimen/seamless_metric_micro" />
+
+            <ImageView
+                android:id="@+id/seamless_maia_card_mainimage"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginTop="120dp"
+                android:scaleType="fitXY" />
+
+            <include
+                layout="@layout/seamless_maia_card_footer"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:layout_marginTop="280dp" />
+
+        </com.mobilike.seamless.view.MaiaCardContainerView>
+
+
+    </LinearLayout>
+
+</FrameLayout>
