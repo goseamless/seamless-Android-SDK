@@ -85,11 +85,11 @@ containing a value of this type.
         public static int star_unfilled=0x7f02000b;
     }
     public static final class id {
-        public static int banner=0x7f090007;
+        public static int banner=0x7f090009;
         public static int dummyView=0x7f09000f;
         public static int dummyView2=0x7f09000b;
-        public static int imageView1=0x7f090003;
-        public static int maiaButton=0x7f090005;
+        public static int imageView1=0x7f090005;
+        public static int maiaButton=0x7f090007;
         public static int maia_card_banner_image=0x7f090014;
         public static int maia_card_bottom_button=0x7f09001b;
         public static int maia_card_bottom_download=0x7f09001a;
@@ -100,11 +100,11 @@ containing a value of this type.
         public static int maia_card_header_main_title=0x7f09001f;
         public static int maia_card_header_small_icon=0x7f09001d;
         public static int maia_card_header_small_icon_container=0x7f09001c;
-        public static int maia_title=0x7f090004;
-        public static int pager=0x7f090006;
+        public static int maia_title=0x7f090006;
+        public static int pager=0x7f090008;
         public static int progressLayoutBanner=0x7f090015;
         public static int progressLayoutSmallIcon=0x7f09001e;
-        public static int seamless_maia_card_description=0x7f090008;
+        public static int seamless_maia_card_description=0x7f090001;
         public static int seamless_maia_card_footer_container=0x7f09000a;
         public static int seamless_maia_card_footer_ctabutton=0x7f090010;
         public static int seamless_maia_card_footer_quantity=0x7f09000e;
@@ -112,9 +112,9 @@ containing a value of this type.
         public static int seamless_maia_card_header_icon=0x7f090011;
         public static int seamless_maia_card_header_sponsor=0x7f090013;
         public static int seamless_maia_card_header_title=0x7f090012;
-        public static int seamless_maia_card_mainimage=0x7f090009;
-        public static int seamless_maia_container=0x7f090002;
-        public static int seamless_maia_main_container=0x7f090001;
+        public static int seamless_maia_card_mainimage=0x7f090002;
+        public static int seamless_maia_container=0x7f090004;
+        public static int seamless_maia_main_container=0x7f090003;
         public static int test=0x7f090000;
         public static int textLayout=0x7f090018;
     }
@@ -122,18 +122,20 @@ containing a value of this type.
         public static int max_row_size=0x7f070000;
     }
     public static final class layout {
-        public static int custom_test=0x7f030000;
-        public static int new_list_item=0x7f030001;
-        public static int null_item=0x7f030002;
-        public static int seamless_custom_banner=0x7f030003;
-        public static int seamless_maia_card=0x7f030004;
-        public static int seamless_maia_card_footer=0x7f030005;
-        public static int seamless_maia_card_header=0x7f030006;
-        public static int seamless_maia_card_internals=0x7f030007;
-        public static int seamless_maiacard_banner_old=0x7f030008;
-        public static int seamless_maiacard_description_old=0x7f030009;
-        public static int seamless_maiacard_footer_old=0x7f03000a;
-        public static int seamless_maiacard_header_old=0x7f03000b;
+        public static int custom_native_test=0x7f030000;
+        public static int custom_test=0x7f030001;
+        public static int default_seamless_native=0x7f030002;
+        public static int new_list_item=0x7f030003;
+        public static int null_item=0x7f030004;
+        public static int seamless_custom_banner=0x7f030005;
+        public static int seamless_maia_card=0x7f030006;
+        public static int seamless_maia_card_footer=0x7f030007;
+        public static int seamless_maia_card_header=0x7f030008;
+        public static int seamless_maia_card_internals=0x7f030009;
+        public static int seamless_maiacard_banner_old=0x7f03000a;
+        public static int seamless_maiacard_description_old=0x7f03000b;
+        public static int seamless_maiacard_footer_old=0x7f03000c;
+        public static int seamless_maiacard_header_old=0x7f03000d;
     }
     public static final class string {
         public static int layout_click_message=0x7f060004;

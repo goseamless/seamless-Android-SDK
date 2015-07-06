@@ -25,7 +25,6 @@
             android:layout_height="20dp"
             android:maxLines="1"
             android:textStyle="bold"
-            android:text="asd"
             android:textColor="#000000"
             android:gravity="center_vertical"
             android:id="@+id/maia_card_bottom_title" />
@@ -41,7 +40,6 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="asd"
             android:gravity="center_vertical"
             android:layout_marginBottom="2dp"
             android:textColor="@color/grey"
