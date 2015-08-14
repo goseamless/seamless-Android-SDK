@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.4.0)
+seamless-Android-SDK(v2.4.1)
 =========
 
 Requirements
@@ -41,6 +41,9 @@ Requirements
 Installation
 -----
 * For Eclipse  
+
+    IMPORTANT: seamless Android SDK Eclipse support will not be maintained after version 2.4.0!
+    You can still find the .jar file for version 2.4.0 and below.
 
     1. Add .jar file to your project  
 
@@ -98,7 +101,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.4.0'
+        compile 'com.goseamless:seamless:2.4.1'
     }
     ```
 
