@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.5.1)
+seamless-Android-SDK(v2.6.0)
 =========
 
 Requirements
@@ -102,7 +102,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.5.1'
+        compile 'com.goseamless:seamless:2.6.0'
     }
     ```
 
@@ -118,23 +118,38 @@ Installation
 
   * Declare the following activities to your *AndroidManifest.xml* file.  
   ```
-  <activity android:name="com.mobilike.seamless.mopub.mobileads.MoPubActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-  <activity android:name="com.mobilike.seamless.mopub.mobileads.MraidActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-  <activity android:name="com.mobilike.seamless.mopub.common.MoPubBrowser"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-  <activity android:name="com.mobilike.seamless.mopub.mobileads.MraidVideoPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+  <activity
+            android:name="com.admarvel.android.ads.AdMarvelActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true" />
+
+        <activity android:name="com.admarvel.android.ads.AdMarvelVideoActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true" />
+
+        <activity android:name="com.admarvel.android.ads.AdMarvelMediationActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="com.admarvel.android.ads.AdMarvelLocalFileContentProvider"
+            android:authorities="<YOUR_PACKAGE_NAME>.AdMarvelLocalFileContentProvider"
+            android:exported="false" />
   <activity android:name="com.facebook.ads.InterstitialAdActivity"
             android:configChanges="keyboardHidden|orientation" />
   <activity android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
   <activity
-            android:name="com.mobilike.seamless.player.org.nexage.sourcekit.vast.activity.VASTActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+            android:name="com.mobilike.seamless.player.org.nexage.sourcekit.SeamlessPlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
   <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+  <activity
+            android:name="com.mobilike.seamless.inappbrowser.InAppBrowser"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
   ```
 
 
@@ -153,6 +168,14 @@ How to use
       // In the onCreate method, set your app token and application context
       SeamlessConfig.setAppToken("*** Your AppToken ***", this);
   }
+   ``` 
+   
+  In your activities, initialize AdMarvel:  
+  ```
+  Map<AdMarvelUtils.SDKAdNetwork, String> publisherIds = new HashMap<AdMarvelUtils.SDKAdNetwork, String>();
+        publisherIds.put(AdMarvelUtils.SDKAdNetwork.FACEBOOK, "your facebook placement id");
+        publisherIds.put(AdMarvelUtils.SDKAdNetwork.ADCOLONY, "your adColony info");
+        AdMarvelUtils.initialize(this, publisherIds);
    ``` 
 
 ### Feed Ad Integration
@@ -300,7 +323,7 @@ BannerManagerListener bannerManagerListener = new BannerManagerListener() {
     }
     
     @Override
-    public void onBannerClicked(MoPubView view, String clickInfo) {
+    public void onBannerClicked(AdMarvelView view, String clickInfo) {
         // Informs you that ad is clicked
         // clickInfo returns ad's click URL. Do not use without a null check.
     }
@@ -397,24 +420,24 @@ protected void onDestroy() {
 ```
 InterstitialManagerListener intersititalManagerListener = new InterstitialManagerListener() {
     @Override
-    public void onInterstitialLoad(MoPubInterstitial mInterstitial, boolean isReady) {
-        if(isReady) {
-            mInterstitial.show();
-        }
-    }
+            public void onInterstitialLoad(AdMarvelInterstitialAds mInterstitial, AdMarvelUtils.SDKAdNetwork sdkAdNetwork, String id,AdMarvelAd adMarvelAd) {
+                if (mInterstitial.isInterstitialAdAvailable()) {
+                    mInterstitial.displayInterstitial(MainActivity.this, sdkAdNetwork, id, adMarvelAd);
+                }
+            }
     @Override
     public void onInterstitialFailed(String error) {
 
     }
     
     @Override
-    public void onInterstitialClicked(MoPubInterstitial moPubInterstitial, String clickInfo) {
+    public void onInterstitialClicked(AdMarvelInterstitialAds adMArvelInterstitial, String clickInfo) {
         // Informs you that ad is clicked
         // clickInfo returns ad's click URL. Do not use without a null check.
     }
 
     @Override
-    public void onInterstitialDismissed(MoPubInterstitial moPubInterstitial) {
+    public void onInterstitialDismissed() {
 
     }
 };
@@ -430,67 +453,25 @@ InterstitialManager interstitialManager = new InterstitialManager.Builder(contex
     .build();
 ```  
 
->Don't forget to destroy your adView in *onDestroy()* callback
-```
-@Override
-protected void onDestory() {
-    interstitialManager.destroyAd();
-    super.onDestroy();
-}
-```  
 
 
->For enabling in-app-redirecting to a fragment in your app, append "fragment://" pattern as a prefix for your URL.  
-### Extra Google Parameters
-* In order to send extra google parameters, set the optional properties per each ad request. (available for all ad types)  
-```
-...
-.setBirthday() // Date 
-.setContentURL() // String 
-.setLocation() // Location
-.setGender() // int (available static values for each manager)
-.setChildTreatmentEnabled() // boolean
-```  
 
 ### Video Ad Integration
-Currently, Seamless Android SDK only supports preroll ads.  
 
 * Define the *SeamlessPlayerManagerListener*  
 ```
 SeamlessPlayerManagerListener seamlessPlayerManagerListener = new SeamlessPlayerManagerListener() {
+     @Override
+     public void onError(Exception e) {
 
-    @Override
-    public void onAdReady(VASTPlayer vastPlayer) {
-        if (vastPlayer != null) {
-            vastPlayer.play();
-        }
-    }
-
-    @Override
-    public void onAdFailed(String error) {
-        // Ad Failed
-    }
-
-    @Override
-    public void onAdClicked() {
-        // Ad Clicked
-    }
-
-    @Override
-    public void onAdCompleted() {
-        // Ad Completed
-    }
-
-    @Override
-    public void onAdDismissed() {
-        // Ad Dismissed
-    }
+     }
     
 };
 ```
 * Define the *SeamlessPlayerManager*  
 ```
 SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(context)
+    .contentURL("YOUR CONTENT URL")
     .entity("xxx-- Your Token --xxx") // Should specify your current content like "yourapp-yourcontent-adtype"
     .listener(seamlessPlayerManager Listener)
     .build();
