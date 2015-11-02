@@ -475,6 +475,8 @@ SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(
     .entity("xxx-- Your Token --xxx") // Should specify your current content like "yourapp-yourcontent-adtype"
     .listener(seamlessPlayerManager Listener)
     .build();
+ 
+ seamlessPlayerManager.play();
 ```  
 
 ### Feed Ad Customization (Recommended)
