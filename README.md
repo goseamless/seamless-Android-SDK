@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.6.0)
+seamless-Android-SDK(v2.6.1)
 =========
 
 Requirements
@@ -102,7 +102,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.6.0'
+        compile 'com.goseamless:seamless:2.6.1'
     }
     ```
 
@@ -113,43 +113,52 @@ Installation
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   ```
 
   * Declare the following activities to your *AndroidManifest.xml* file.  
   ```
-  <activity
-            android:name="com.admarvel.android.ads.AdMarvelActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true" />
+ <activity
+           android:name="com.admarvel.android.ads.AdMarvelActivity"
+           android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+           android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+           android:hardwareAccelerated="true" />
 
-        <activity android:name="com.admarvel.android.ads.AdMarvelVideoActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true" />
-
-        <activity android:name="com.admarvel.android.ads.AdMarvelMediationActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <provider
-            android:name="com.admarvel.android.ads.AdMarvelLocalFileContentProvider"
-            android:authorities="<YOUR_PACKAGE_NAME>.AdMarvelLocalFileContentProvider"
-            android:exported="false" />
-  <activity android:name="com.facebook.ads.InterstitialAdActivity"
-            android:configChanges="keyboardHidden|orientation" />
-  <activity android:name="com.google.android.gms.ads.AdActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
-  <activity
-            android:name="com.mobilike.seamless.player.org.nexage.sourcekit.SeamlessPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
-  <meta-data android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-  <activity
-            android:name="com.mobilike.seamless.inappbrowser.InAppBrowser"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+ <activity android:name="com.admarvel.android.ads.AdMarvelVideoActivity"
+     android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+     android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+     android:hardwareAccelerated="true" />
+ 
+ <activity android:name="com.admarvel.android.ads.AdMarvelMediationActivity"
+     android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+     android:hardwareAccelerated="true"
+     android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+ 
+ <provider
+     android:name="com.admarvel.android.ads.AdMarvelLocalFileContentProvider"
+     android:authorities="<YOUR_PACKAGE_NAME>.AdMarvelLocalFileContentProvider"
+     android:exported="false" />
+ <activity android:name="com.facebook.ads.InterstitialAdActivity"
+           android:configChanges="keyboardHidden|orientation" />
+ <activity android:name="com.google.android.gms.ads.AdActivity"
+           android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+ <activity
+           android:name="com.mobilike.seamless.player.org.nexage.sourcekit.SeamlessPlayerActivity"
+           android:configChanges="keyboardHidden|orientation|screenSize" />
+ <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
+ <activity
+           android:name="com.mobilike.seamless.inappbrowser.InAppBrowser"
+           android:configChanges="keyboardHidden|orientation|screenSize" />
+ <activity android:name="com.jirbo.adcolony.AdColonyOverlay"
+           android:windowSoftInputMode="adjustNothing"
+           android:configChanges="keyboardHidden|orientation|screenSize"
+           android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+ <activity android:name="com.jirbo.adcolony.AdColonyFullscreen"
+     android:configChanges="keyboardHidden|orientation|screenSize"
+     android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+ <activity android:name="com.jirbo.adcolony.AdColonyBrowser"
+     android:configChanges="keyboardHidden|orientation|screenSize"
+     android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
   ```
 
 
@@ -170,8 +179,11 @@ How to use
   }
    ``` 
    
-  In your activities, initialize AdMarvel:  
+  In your activities, initialize Seamless and AdMarvel:  
   ```
+  // Only in your first activity
+  SeamlessInit.getInstance().init(this);
+  
   Map<AdMarvelUtils.SDKAdNetwork, String> publisherIds = new HashMap<AdMarvelUtils.SDKAdNetwork, String>();
         publisherIds.put(AdMarvelUtils.SDKAdNetwork.FACEBOOK, "your facebook placement id");
         publisherIds.put(AdMarvelUtils.SDKAdNetwork.ADCOLONY, "your adColony info");
@@ -198,12 +210,6 @@ FeedListener feedListener = new FeedListener() {
     public void onAdFailed(ListAdapter adapter){
         // If ads fail to load, returns your own adapter
         mListView.setAdapter(adapter);
-    }
-    
-    @Override
-    public void onAdClicked(MoPubView view, String clickInfo) {
-        // Informs you that ad is clicked
-        // clickInfo returns ad's click URL. Do not use without a null check.
     }
 };
 ```  
@@ -269,12 +275,6 @@ RecyclerFeedListener feedListener = new RecyclerFeedListener() {
     public void onAdFailed(RecyclerView.Adapter adapter){
         // If ads fail to load, returns your own adapter
         mRecyclerView.setAdapter(adapter);
-    }
-    
-    @Override
-    public void onAdClicked(MoPubView view, String clickInfo) {
-        // Informs you that ad is clicked
-        // clickInfo returns ad's click URL. Do not use without a null check.
     }
 };
 ```
