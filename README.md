@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.5.2)
+seamless-Android-SDK(v2.7.0)
 =========
 
 Requirements
@@ -64,6 +64,8 @@ Installation
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
     ```
 
     4. Declare the following activities to your *AndroidManifest.xml* file.  
@@ -83,6 +85,10 @@ Installation
     <activity
             android:name="com.mobilike.seamless.player.org.nexage.sourcekit.vast.activity.VASTActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+    <activity
+		    android:name="com.mobilike.seamless.player.org.nexage.sourcekit.SeamlessPlayerActivity"
+		    android:configChanges="keyboardHidden|orientation|screenSize"
+		    android:screenOrientation="userLandscape"/>
     <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
     ```
@@ -102,7 +108,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.5.2'
+        compile 'com.goseamless:seamless:2.7.0'
     }
     ```
 
@@ -114,6 +120,8 @@ Installation
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.FLASHLIGHT" />
   ```
 
   * Declare the following activities to your *AndroidManifest.xml* file.  
@@ -133,6 +141,10 @@ Installation
   <activity
             android:name="com.mobilike.seamless.player.org.nexage.sourcekit.vast.activity.VASTActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+  <activity
+		    android:name="com.mobilike.seamless.player.org.nexage.sourcekit.SeamlessPlayerActivity"
+		    android:configChanges="keyboardHidden|orientation|screenSize"
+		    android:screenOrientation="userLandscape"/>
   <meta-data android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
   ```
@@ -466,30 +478,8 @@ Currently, Seamless Android SDK only supports preroll ads.
 SeamlessPlayerManagerListener seamlessPlayerManagerListener = new SeamlessPlayerManagerListener() {
 
     @Override
-    public void onAdReady(VASTPlayer vastPlayer) {
-        if (vastPlayer != null) {
-            vastPlayer.play();
-        }
-    }
+    public void onError(Exception e) {
 
-    @Override
-    public void onAdFailed(String error) {
-        // Ad Failed
-    }
-
-    @Override
-    public void onAdClicked() {
-        // Ad Clicked
-    }
-
-    @Override
-    public void onAdCompleted() {
-        // Ad Completed
-    }
-
-    @Override
-    public void onAdDismissed() {
-        // Ad Dismissed
     }
     
 };
@@ -499,7 +489,11 @@ SeamlessPlayerManagerListener seamlessPlayerManagerListener = new SeamlessPlayer
 SeamlessPlayerManager seamlessPlayerManager = new SeamlessPlayerManager.Builder(context)
     .entity("xxx-- Your Token --xxx") // Should specify your current content like "yourapp-yourcontent-adtype"
     .listener(seamlessPlayerManager Listener)
+    .contentURL("xxx-- Your Content video URL --xxx") // The Content Video URL 
     .build();
+
+seamlessPlayerManager.play();
+
 ```  
 
 ### Feed Ad Customization (Recommended)
