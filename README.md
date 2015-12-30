@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.7.0)
+seamless-Android-SDK(v2.8.0)
 =========
 
 Requirements
@@ -108,7 +108,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.7.0'
+        compile 'com.goseamless:seamless:2.8.0'
     }
     ```
 
@@ -205,7 +205,7 @@ FeedListener feedListener = new FeedListener() {
 * Define the *CustomViewBinder*
 * It's recommended to create a custom view for custom native ads in feed. After creating one, pass it to the FeedManager.
 ```
-CustomViewBinder viewBinder = new CustomViewBinder.Builder(R.layout.yourLayout).mainImageID(R.id.yourMainImage).iconImageID(R.id.yourIconImage)
+CustomViewBinder viewBinder = new CustomViewBinder.Builder(R.layout.yourLayout, R.id.adChoicesIcon).mainImageID(R.id.yourMainImage).iconImageID(R.id.yourIconImage)
                     .textID(R.id.yourText).titleID(R.id.yourTitle)
                     .callToActionID(R.id.yourCTAButton).socailContextID(R.id.yourSocialContextText).ratingID(R.id.seamless_maia_card_footer_rating).sponsorID(R.id.yourSponsoredText).build();
 ```  
