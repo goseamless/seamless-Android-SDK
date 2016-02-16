@@ -1,4 +1,4 @@
-seamless-Android-SDK(v2.8.0)
+seamless-Android-SDK(v3.0.0)
 =========
 
 Requirements
@@ -108,7 +108,7 @@ Installation
     * Add the following code to your dependencies
     ```
     dependencies {
-        compile 'com.goseamless:seamless:2.8.0'
+        compile 'com.goseamless:seamless:3.0.0'
     }
     ```
 
@@ -415,11 +415,18 @@ protected void onDestroy() {
 ```
 InterstitialManagerListener intersititalManagerListener = new InterstitialManagerListener() {
     @Override
-    public void onInterstitialLoad(MoPubInterstitial mInterstitial, boolean isReady) {
-        if(isReady) {
+    public void onInterstitialLoad(MoPubInterstitial mInterstitial,
+                           PublisherInterstitialAd publisherInterstitialAd, boolean isReady) {
+        if (mInterstitial != null && mInterstitial.isReady()) {
             mInterstitial.show();
         }
+
+        if (publisherInterstitialAd != null && publisherInterstitialAd.isLoaded()) {
+            publisherInterstitialAd.show();
+        }
+
     }
+    
     @Override
     public void onInterstitialFailed(String error) {
 
