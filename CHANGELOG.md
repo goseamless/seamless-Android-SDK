@@ -1,6 +1,12 @@
 Change Log
 =========
 
+16.02.2016 v3.0.0
+-----
+ 1. DFP added to seamless Android SDK. This effects some ad event callbacks (see documentation).
+
+
+
 30.12.2015 v2.8.0
 -----
  1. Ad Choices Icon for Custom Native Ads
